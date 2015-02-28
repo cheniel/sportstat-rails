@@ -9,6 +9,7 @@
       <th>Two pointers</th>
       <th>Three pointers</th>
       <th>Notes</th>
+      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +23,8 @@
         <td><%= basketball_game.two_pointers %></td>
         <td><%= basketball_game.three_pointers %></td>
         <td><%= basketball_game.notes %></td>
+        <td><%= basketball_game.user_id %></td>
+
         <td><%= link_to 'Show', basketball_game %></td>
         <td><%= link_to 'Edit', edit_basketball_game_path(basketball_game) %></td>
         <td><%= link_to 'Destroy', basketball_game, method: :delete, data: { confirm: 'Are you sure?' } %></td>

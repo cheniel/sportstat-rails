@@ -30,5 +30,10 @@
   <%= @basketball_game.notes %>
 </p>
 
+<p>
+  <strong>User:</strong>
+  <%= @basketball_game.user_id %>
+</p>
+
 <%= link_to 'Edit', edit_basketball_game_path(@basketball_game) %> |
 <%= link_to 'Back', basketball_games_path %>
