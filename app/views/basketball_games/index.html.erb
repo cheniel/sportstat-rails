@@ -1,0 +1,35 @@
+<h1>Listing basketball_games</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Assists</th>
+      <th>Two pointers</th>
+      <th>Three pointers</th>
+      <th>Notes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @basketball_games.each do |basketball_game| %>
+      <tr>
+        <td><%= basketball_game.start_time %></td>
+        <td><%= basketball_game.end_time %></td>
+        <td><%= basketball_game.assists %></td>
+        <td><%= basketball_game.two_pointers %></td>
+        <td><%= basketball_game.three_pointers %></td>
+        <td><%= basketball_game.notes %></td>
+        <td><%= link_to 'Show', basketball_game %></td>
+        <td><%= link_to 'Edit', edit_basketball_game_path(basketball_game) %></td>
+        <td><%= link_to 'Destroy', basketball_game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Basketball game', new_basketball_game_path %>

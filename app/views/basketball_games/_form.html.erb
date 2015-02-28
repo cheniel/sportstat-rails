@@ -1,0 +1,41 @@
+<%= form_for(@basketball_game) do |f| %>
+  <% if @basketball_game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@basketball_game.errors.count, "error") %> prohibited this basketball_game from being saved:</h2>
+
+      <ul>
+      <% @basketball_game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :start_time %><br>
+    <%= f.datetime_select :start_time %>
+  </div>
+  <div class="field">
+    <%= f.label :end_time %><br>
+    <%= f.datetime_select :end_time %>
+  </div>
+  <div class="field">
+    <%= f.label :assists %><br>
+    <%= f.number_field :assists %>
+  </div>
+  <div class="field">
+    <%= f.label :two_pointers %><br>
+    <%= f.number_field :two_pointers %>
+  </div>
+  <div class="field">
+    <%= f.label :three_pointers %><br>
+    <%= f.number_field :three_pointers %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_field :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

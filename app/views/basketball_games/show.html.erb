@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @basketball_game.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @basketball_game.end_time %>
+</p>
+
+<p>
+  <strong>Assists:</strong>
+  <%= @basketball_game.assists %>
+</p>
+
+<p>
+  <strong>Two pointers:</strong>
+  <%= @basketball_game.two_pointers %>
+</p>
+
+<p>
+  <strong>Three pointers:</strong>
+  <%= @basketball_game.three_pointers %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @basketball_game.notes %>
+</p>
+
+<%= link_to 'Edit', edit_basketball_game_path(@basketball_game) %> |
+<%= link_to 'Back', basketball_games_path %>

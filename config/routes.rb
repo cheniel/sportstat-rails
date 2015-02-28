@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :basketball_games
+
   root 'home#index'
   get 'code' => 'home#code'
   get 'pitch' => 'demo#pitch'

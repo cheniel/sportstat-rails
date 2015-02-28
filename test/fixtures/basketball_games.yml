@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2015-02-28 13:48:13
+  end_time: 2015-02-28 13:48:13
+  assists: 1
+  two_pointers: 1
+  three_pointers: 1
+  notes: MyString
+
+two:
+  start_time: 2015-02-28 13:48:13
+  end_time: 2015-02-28 13:48:13
+  assists: 1
+  two_pointers: 1
+  three_pointers: 1
+  notes: MyString
