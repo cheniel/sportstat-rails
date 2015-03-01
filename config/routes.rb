@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'code' => 'home#code'
   get 'pitch' => 'demo#pitch'
   get 'demo/1' => 'demo#demo1'
+  get 'login/:username' => 'users#get_by_username'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   layout false
 
+  def get_by_username
+    @user = User.find_by username: params[:username]
+  end
+
   # GET /users
   # GET /users.json
   def index
