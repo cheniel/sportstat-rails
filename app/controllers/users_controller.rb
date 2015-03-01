@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  layout false
+  layout 'api'
 
   def get_by_username
     @user = User.find_by username: params[:username]

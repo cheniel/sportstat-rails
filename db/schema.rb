@@ -30,12 +30,7 @@ ActiveRecord::Schema.define(version: 20150301012559) do
 
   add_index "basketball_games", ["user_id"], name: "index_basketball_games_on_user_id", using: :btree
 
-  create_table "user_relationship", id: false, force: true do |t|
-    t.integer "follower_id",  null: false
-    t.integer "following_id", null: false
-  end
-
-  create_table "user_relationships", id: false, force: true do |t|
+  create_table "user_relationships", force: true do |t|
     t.integer  "follower_id",  null: false
     t.integer  "following_id", null: false
     t.datetime "created_at"

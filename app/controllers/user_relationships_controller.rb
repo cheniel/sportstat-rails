@@ -1,10 +1,15 @@
 class UserRelationshipsController < ApplicationController
   before_action :set_user_relationship, only: [:show, :edit, :update, :destroy]
+  layout 'api'
 
   # GET /user_relationships
   # GET /user_relationships.json
   def index
-    @user_relationships = UserRelationship.all
+    unless params[:user_id].blank?
+      @user_relationships = UserRelationship.where(follower_id: params[:user_id])
+    else
+      @user_relationships = UserRelationship.all
+    end
   end
 
   # GET /user_relationships/1

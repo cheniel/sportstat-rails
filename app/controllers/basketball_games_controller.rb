@@ -1,6 +1,6 @@
 class BasketballGamesController < ApplicationController
   before_action :set_basketball_game, only: [:show, :edit, :update, :destroy]
-  layout false
+  layout 'api'
 
   # GET /basketball_games
   # GET /basketball_games.json

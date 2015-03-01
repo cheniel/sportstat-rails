@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  resources :user_relationships
 
   resources :users do
     resources :basketball_games
+    resources :user_relationships
   end
 
   resources :basketball_games
+  resources :user_relationships
 
   root 'home#index'
   get 'code' => 'home#code'
