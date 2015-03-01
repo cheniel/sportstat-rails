@@ -2,6 +2,11 @@ class BasketballGamesController < ApplicationController
   before_action :set_basketball_game, only: [:show, :edit, :update, :destroy]
   layout 'api'
 
+  def get_user_feed
+    user = User.find(params[:user_id])
+    @basketball_games = BasketballGame.where(user_id: user.following_ids)
+  end
+
   # GET /basketball_games
   # GET /basketball_games.json
   def index

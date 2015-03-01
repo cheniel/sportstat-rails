@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-
   resources :users do
     resources :basketball_games
     resources :user_relationships
+    get 'feed' => 'basketball_games#get_user_feed'
   end
 
   resources :basketball_games
