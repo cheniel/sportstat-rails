@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :users
+
+  resources :users do
+    resources :basketball_games
+  end
 
   resources :basketball_games
 

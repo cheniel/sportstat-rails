@@ -5,7 +5,11 @@ class BasketballGamesController < ApplicationController
   # GET /basketball_games
   # GET /basketball_games.json
   def index
-    @basketball_games = BasketballGame.all
+    unless params[:user_id].blank?
+      @basketball_games = BasketballGame.where(user_id: params[:user_id])
+    else
+      @basketball_games = BasketballGame.all
+    end
   end
 
   # GET /basketball_games/1
@@ -70,6 +74,6 @@ class BasketballGamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def basketball_game_params
-      params.require(:basketball_game).permit(:start_time, :end_time, :assists, :two_pointers, :three_pointers, :notes)
+      params.require(:basketball_game).permit(:start_time, :end_time, :assists, :two_pointers, :three_pointers, :user_id, :notes)
     end
 end
