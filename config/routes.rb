@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'code' => 'home#code'
   get 'pitch' => 'demo#pitch'
   get 'demo/1' => 'demo#demo1'
+  get 'demo/2' => 'demo#demo2'
   get 'user_id/:username' => 'users#get_by_username'
 
   # The priority is based upon order of creation: first created -> highest priority.

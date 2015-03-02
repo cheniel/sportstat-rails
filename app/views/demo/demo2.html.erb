@@ -1,0 +1,65 @@
+<p><b><u>Demo notes for 3/2/15. Please make sure to scroll</u></b></p>
+<div class="text-left" style="height: 600px; overflow: scroll; overflow-y: scroll; border: 1px solid black">
+<h1 class="cover-heading">Demoable Items</h1>
+<ul>
+  <li>Save game to the cloud and view it later.</li>
+  <li>View Newsfeed, which is comprised of games that the user created as well as games for users who the user follows.</li>
+  <li>Point logging on both the Pebble and Android during-game</li>
+  <li>Game summary view after a game has been logged which has basic charts</li>
+  <li>Ability to view user and friend's profiles, including their game history, stats (w/ pretty charts), and name.</li>
+  <li>Ability to choose an avatar for your user.</li>
+  <li>Lookup a friend by name</li>
+  <li>Manual logging of game information.</li>
+  <li>Basic UI for all activities.</li>
+
+</ul>
+
+<h1 class="cover-heading">Functionality Created</h1>
+<!-- <p class="lead"></p> -->
+<div class="text-left">
+<ul>
+  <li>
+    Android app (<a href="https://github.com/cheniel/sportstat-android/releases">releases</a>)
+    <ul>
+      <li>MainActivity, which contains fragments for all of the functionality in the app navigated through a navigation drawer.</li>
+      <li>StartGameFragment, which opens a SportLoggingActivity which connects to the Pebble and allows the user to log points as they are happening. Shows a GameSummaryActivity upon finishing which has charts of the data recorded during the game.</li>
+      <li>LogGameFragment, which allows the user to log a game retroactivly (UI only)</li>
+      <li>FriendViewActivity, which allows a user to look at his/her own profile, which shows the games he/she has played and stats over time.</li>
+      <li>FriendFinderFragment, which allows lookup of other users.</li>
+      <li>SettingsFragment, which allows the user to edit his/her avatar and info.</li>
+    </ul>
+  </li>
+  <li>
+    Pebble app (<a href="https://github.com/cheniel/sportstat-pebble/releases">releases</a>)
+    <ul>
+      <li>connect to the mobile device and open the proper windows (idle_window, game_window, or summary_window) based on the data from the device</li>
+      <li>synchronize point logging data between mobile and Pebble device. Sends when user logs on mobile and refreshes based on data from mobile (unless mobile was just unlocked and onResume was called on the SportLoggingActivity, at which point the Pebble data takes precedence).</li>
+      <li>allows for manual input of point data</li>
+      <li>displays last point data on game end and disconnect</li>
+      <li>connects and synchronizes with mobile if Pebble app is opened late</li>
+    </ul>
+  </li>
+  <li>
+    Rails backend (<a href="https://github.com/cheniel/sportstat-rails/releases">releases</a>)
+    <ul>
+      <li>User model, which has a unidirectional many-to-many relationship to other users based on a follower/following model. This is facilitated through a user_relationship model</li>
+      <li>BasketballGame model, which has a foreign key to a specific user and so far stores manual input and time data.</li>
+      <li>On top of basic CRUD operations for all models, include lookup of BasketballGame per user, the ability to view followed users, view games of followed users (and self), lookup user id of username, etc.</li>
+      <li>Web interface to administrate user accounts and games.</li>
+      <li>JSON REST API to access all these features</li>
+      <li>updated website for project.</li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+<h1 class="cover-heading">What's next:</h1>
+<ul>
+  <li>Ability to follow users through the Android app.</li>
+  <li>Automated data points through either Pebble, Android, or both.</li>
+  <li>More statistical analysis over time</li>
+  <li>Leaderboard</li>
+  <li>Friends you follow list</li>
+  <li>UI cleanup</li>
+</ul>
+</div>
