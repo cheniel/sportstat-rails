@@ -6,6 +6,10 @@ class UsersController < ApplicationController
     @user = User.find_by username: params[:username]
   end
 
+  def get_friends
+    # TODO
+  end
+
   # GET /users
   # GET /users.json
   def index

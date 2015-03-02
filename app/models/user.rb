@@ -11,7 +11,8 @@ class User < ActiveRecord::Base
   end
 
   def following_ids
-    users.to_a.select{|f| f.id}
+    ids = users.to_a.select{|f| f.id}
+    ids << id
   end
 
   def to_s
