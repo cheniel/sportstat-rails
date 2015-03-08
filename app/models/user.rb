@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
     ids << id
   end
 
+  def games
+    basketball_games
+  end
+
   def to_s
     username
   end
