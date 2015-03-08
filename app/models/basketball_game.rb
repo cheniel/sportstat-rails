@@ -4,4 +4,8 @@ class BasketballGame < ActiveRecord::Base
   def username
     user.username
   end
+
+  def user_avatar
+    user.avatar
+  end
 end
