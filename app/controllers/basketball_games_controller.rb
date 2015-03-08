@@ -79,6 +79,6 @@ class BasketballGamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def basketball_game_params
-      params.require(:basketball_game).permit(:start_time, :end_time, :assists, :two_pointers, :three_pointers, :user_id, :notes)
+      params.require(:basketball_game).permit(:start_time, :end_time, :assists, :two_pointers, :three_pointers, :user_id, :notes, :lat, :long, :duration, :distance, :possessions, :shots_attempted)
     end
 end
