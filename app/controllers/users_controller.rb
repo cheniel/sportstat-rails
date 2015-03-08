@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   end
 
   def get_friends
-    # TODO
+    @user = User.find_by id: params[:id]
+    @friends = @user.following
   end
 
   # GET /users
