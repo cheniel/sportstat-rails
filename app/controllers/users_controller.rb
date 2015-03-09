@@ -9,6 +9,11 @@ class UsersController < ApplicationController
   def get_friends
     @user = User.find_by id: params[:id]
     @friends = @user.following
+
+    # add oneself as a friend
+    if UserRelationship.find_by(follower_id: @user.id, following_id: @user.id).nil?
+      @friends << @user
+    end
   end
 
   # GET /users
