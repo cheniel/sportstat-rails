@@ -2,6 +2,10 @@ class UserRelationshipsController < ApplicationController
   before_action :set_user_relationship, only: [:show, :edit, :update, :destroy]
   layout 'api'
 
+  def get_relationship
+    @relationship = UserRelationship.find_by(follower_id: params[:user_id], following_id: params[:following_id])
+  end
+
   # GET /user_relationships
   # GET /user_relationships.json
   def index

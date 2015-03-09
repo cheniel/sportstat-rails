@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'demo/2' => 'demo#demo2'
   get 'user_id/:username' => 'users#get_by_username'
   get 'users/:id/following' => 'users#get_friends'
+  get 'relationship/:user_id/:following_id' => 'user_relationships#get_relationship'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
