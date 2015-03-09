@@ -1,3 +1,14 @@
 a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
+
+a:visited {
+  color: inherit;
+}
+
+.sportstat-title {
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+}
+

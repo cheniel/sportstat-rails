@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
     :association_foreign_key => "following_id")
 
   def following
-    users
+    u = users
+    u << self
   end
 
   def following_ids

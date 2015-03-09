@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'pitch' => 'demo#pitch'
   get 'demo/1' => 'demo#demo1'
   get 'demo/2' => 'demo#demo2'
+  get 'final' => 'demo#final'
   get 'user_id/:username' => 'users#get_by_username'
   get 'users/:id/following' => 'users#get_friends'
   get 'relationship/:user_id/:following_id' => 'user_relationships#get_relationship'
